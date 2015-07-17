@@ -1,0 +1,29 @@
+application: abeautifulshuffle
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: false
+
+handlers:
+- url: /(.*\.(gif|png|jpg|ico|js|css))
+  static_files: \1
+  upload: (.*\.(gif|png|jpg|ico|js|css))
+
+- url: /robots.txt
+  static_files: robots.txt
+  upload: robots.txt 
+
+- url: /css
+  static_dir: stylesheets
+
+- url: /js
+  static_dir: scripts
+
+- url: /images
+  static_dir: images
+
+- url: /fonts
+  static_dir: fonts
+
+- url: .*
+  script: main.py
